@@ -1,0 +1,14 @@
+{
+  "name": "tesco-trolley-share",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/JosefKuchar/tesco-trolley-share",
+  "author": "Josef Kuchař <josef.kuchar267@gmail.com>",
+  "license": "GPL-3.0-only",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "webpack": "^5.50.0",
+    "webpack-cli": "^4.8.0"
+  }
+}
