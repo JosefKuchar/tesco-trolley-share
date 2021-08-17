@@ -32,13 +32,18 @@ function findReact(dom, traverseUp = 0) {
     return compFiber.stateNode;
 }
 
-// Find product list in DOM
-const productListDOM = document.querySelector(".product-list");
-const productList = findReact(productListDOM);
-const items = productList.props.items;
+// Get array of items from trolley
+function getItems() {
+  const productListDOM = document.querySelector(".product-list");
 
-console.log(Array.from(items).map(item => item[1]).map(item => {
-    const url = `https://nakup.itesco.cz/groceries/cs-CZ/products/${item.product.id}`;
-    const unit = item.customerUnitChoice === 'pcs' ? 'ks' : item.customerUnitChoice;
-    return `${url} - ${item.quantity} ${unit}`;
-}).join('\n'));
+  if (!productListDOM) {
+    return [];
+  }
+
+  const productList = findReact(productListDOM);
+  const items = productList.props.items;
+
+  return Array.from(items).map(item => item[1]);
+}
+
+module.exports = getItems;
